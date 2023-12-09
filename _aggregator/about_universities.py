@@ -42,7 +42,7 @@ about_uni = [
         'description': "The Federal University of Technology, Akure (FUTA), is a federal university located in Akure, Nigeria. Established in 1981, FUTA is dedicated to promoting technological education, research, and innovation. The university's main campus is equipped with state-of-the-art facilities and laboratories, fostering a conducive environment for the pursuit of knowledge and the development of technological solutions. FUTA offers a variety of undergraduate and postgraduate programs in engineering, sciences, and technology-related fields. The university's commitment to excellence has positioned it as a leading institution in the advancement of technology and the training of skilled professionals in Nigeria and beyond."
     },
     {
-        'name': 'Nnamdi Azikiwe University, Awka (UNIZIK)',
+        'name': 'Nnamdi Azikiwe University, (UNIZIK)',
         'location': 'Awka and Nnewi, Anambra State, Nigeria',
         'established': 1991,
         'description': "Nnamdi Azikiwe University, Awka, also known as UNIZIK or NAU, is a federal university in Nigeria. It consists of two campuses in Anambra State, with its main campus located in Awka, the capital of Anambra State, and another campus in Nnewi. Additionally, there are other campuses of Nnamdi Azikiwe University, Awka, including Agulu in Aniocha local government area and Ifite-Ogwuari in Ayamelum local government area in Anambra State. The university is named after the late Dr. Nnamdi Azikiwe, a prominent figure in Nigerian history."

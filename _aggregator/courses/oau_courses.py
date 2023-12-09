@@ -244,12 +244,12 @@ oau_courses_ = {
         "faculty": "ENVIRONMENTAL DESIGN AND MANAGEMENT",
         "aggregate": 58.95,
     },
-    "MEDICAL_REHABILITATION": {
+    "MEDICAL REHABILITATION": {
         "id": 50,
         "faculty": "COLLEGE OF HEALTH SCIENCES",
         "aggregate": 75.23,
     },
-    "NURSING_SCIENCE": {
+    "NURSING SCIENCE": {
         "id": 51,
         "faculty": "COLLEGE OF HEALTH SCIENCES",
         "aggregate": 79,
@@ -269,32 +269,32 @@ oau_courses_ = {
         "faculty": "PHARMACY",
         "aggregate": 74.88,
     },
-    "EDUCATION_BIOLOGY": {
+    "EDUCATION BIOLOGY": {
         "id": 55,
         "faculty": "EDUCATION",
         "aggregate": 57.28,
     },
-    "EDUCATION_CHEMISTRY": {
+    "EDUCATION CHEMISTRY": {
         "id": 56,
         "faculty": "EDUCATION",
         "aggregate": 63.98,
     },
-    "EDUCATION_MATHEMATICS": {
+    "EDUCATION MATHEMATICS": {
         "id": 57,
         "faculty": "EDUCATION",
         "aggregate": 68.88,
     },
-    "MATHEMATICS_INTEGRATED_SCIENCE": {
+    "MATHEMATICS INTEGRATED SCIENCE": {
         "id": 58,
         "faculty": "EDUCATION",
         "aggregate": None,
     },
-    "EDUCATION_PHYSICS": {
+    "EDUCATION PHYSICS": {
         "id": 59,
         "faculty": "EDUCATION",
         "aggregate": 60.88,
     },
-    "HEALTH_EDUCATION": {
+    "HEALTH EDUCATION": {
         "id": 60,
         "faculty": "EDUCATION",
         "aggregate": 68.63,
@@ -304,82 +304,82 @@ oau_courses_ = {
         "faculty": "EDUCATION",
         "aggregate": 59.73,
     },
-    "ADULT_EDUCATION": {
+    "ADULT EDUCATION": {
         "id": 62,
         "faculty": "EDUCATION",
         "aggregate": 57.13,
     },
-    "EDUCATION_FRENCH": {
+    "EDUCATION FRENCH": {
         "id": 63,
         "faculty": "EDUCATION",
         "aggregate": 54.9,
     },
-    "EDUCATION_GEOGRAPHY": {
+    "EDUCATION GEOGRAPHY": {
         "id": 64,
         "faculty": "EDUCATION",
         "aggregate": None,
     },
-    "EDUCATION_HISTORY": {
+    "EDUCATION HISTORY": {
         "id": 65,
         "faculty": "EDUCATION",
         "aggregate": 57.03,
     },
-    "EDUCATION_MUSIC": {
+    "EDUCATION MUSIC": {
         "id": 66,
         "faculty": "EDUCATION",
         "aggregate": 61.18,
     },
-    "EDUCATION_SOCIAL_STUDIES": {
+    "EDUCATION SOCIAL STUDIES": {
         "id": 67,
         "faculty": "EDUCATION",
         "aggregate": None,
     },
-    "EDUCATION_YORUBA": {
+    "EDUCATION YORUBA": {
         "id": 68,
         "faculty": "EDUCATION",
         "aggregate": 56.13,
     },
-    "EDUCATION_ECONOMICS": {
+    "EDUCATION ECONOMICS": {
         "id": 69,
         "faculty": "EDUCATION",
         "aggregate": 61.75,
     },
-    "EDUCATION_RELIGIOUS_STUDIES": {
+    "EDUCATION RELIGIOUS STUDIES": {
         "id": 70,
         "faculty": "EDUCATION",
         "aggregate": 61.48,
     },
-    "EDUCATION_POLITICAL_SCIENCE": {
+    "EDUCATION POLITICAL SCIENCE": {
         "id": 71,
         "faculty": "EDUCATION",
         "aggregate": 58.4,
     },
-    "EDUCATION_FINE_ARTS": {
+    "EDUCATION FINE ARTS": {
         "id": 72,
         "faculty": "EDUCATION",
         "aggregate": 67.68,
     },
-    "EDUCATIONAL_MANAGEMENT": {
+    "EDUCATIONAL MANAGEMENT": {
         "id": 73,
         "faculty": "EDUCATION",
         "aggregate": 73.43,
     },
-    "GUIDANCE_COUNSELLING": {
+    "GUIDANCE COUNSELLING": {
         "id": 74,
         "faculty": "EDUCATION",
         "aggregate": 57.75,
     },
-    "EDUCATION_ENGLISH": {
+    "EDUCATION ENGLISH": {
         "id": 75,
         "faculty": "EDUCATION",
         "aggregate": 61.1,
     },
-    "EDUCATION_LIBRARY_AND_INFORMATION_SCIENCE": {
+    "EDUCATION LIBRARY AND INFORMATION SCIENCE": {
         "id": 76,
         "faculty": "EDUCATION",
         "aggregate": 65.63,
     },
-    "DEMOGRAPHY": {
+    "DEMOGRAPHY AND SOCIAL STATISTICS": {
         "id": 77,
         "faculty": "SOCIAL SCIENCES",
         "aggregate": 53.75,
@@ -399,7 +399,7 @@ oau_courses_ = {
         "faculty": "SOCIAL SCIENCES",
         "aggregate": 52.53,
     },
-    "POLITICAL_SCIENCE": {
+    "POLITICAL SCIENCE": {
         "id": 81,
         "faculty": "SOCIAL SCIENCES",
         "aggregate": 68.33,
@@ -414,103 +414,48 @@ oau_courses_ = {
         "faculty": "SOCIAL SCIENCES",
         "aggregate": 51.3,
     },
-    "MASS_COMMUNICATION": {
+    "MASS COMMUNICATION": {
         "id": 84,
         "faculty": "SOCIAL SCIENCES",
         "aggregate": 71.05,
     },
-    "FILM_PRODUCTION": {
+    "FILM PRODUCTION": {
         "id": 85,
         "faculty": "SOCIAL SCIENCES",
         "aggregate": 60.23,
     },
-    "BROADCAST_JOURNALISM": {
+    "BROADCAST JOURNALISM": {
         "id": 86,
         "faculty": "SOCIAL SCIENCES",
         "aggregate": 51.45,
     },
-    "INFORMATION_SCIENCE_AND_MEDIA_STUDIES": {
+    "INFORMATION SCIENCE AND MEDIA STUDIES": {
         "id": 87,
         "faculty": "SOCIAL SCIENCES",
         "aggregate": 50,
     },
-    "DEMOGRAPHY": {
-        "id": 77,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 53.75,
-    },
-    "ECONOMICS": {
-        "id": 78,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 70.38,
-    },
-    "ENTREPRENEURSHIP": {
-        "id": 79,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 52.53,
-    },
-    "GEOGRAPHY": {
-        "id": 80,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 52.53,
-    },
-    "POLITICAL_SCIENCE": {
-        "id": 81,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 68.33,
-    },
-    "PSYCHOLOGY": {
-        "id": 82,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 63.83,
-    },
-    "SOCIOLOGY": {
-        "id": 83,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 51.3,
-    },
-    "MASS_COMMUNICATION": {
-        "id": 84,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 71.05,
-    },
-    "FILM_PRODUCTION": {
-        "id": 85,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 60.23,
-    },
-    "BROADCAST_JOURNALISM": {
-        "id": 86,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 51.45,
-    },
-    "INFORMATION_SCIENCE_AND_MEDIA_STUDIES": {
-        "id": 87,
-        "faculty": "SOCIAL SCIENCES",
-        "aggregate": 50,
-    },
-    "MANAGEMENT_AND_ACCOUNTING": {
-        "id": 87,
+    "MANAGEMENT AND ACCOUNTING": {
+        "id": 88,
         "faculty": "ADMINISTRATION",
         "aggregate": 65.8,
     },
-    "INTERNATIONAL_RELATIONS": {
-        "id": 88,
+    "INTERNATIONAL RELATIONS": {
+        "id": 89,
         "faculty": "ADMINISTRATION",
         "aggregate": 62.98,
     },
-    "PUBLIC_ADMINISTRATION": {
-        "id": 89,
+    "PUBLIC ADMINISTRATION": {
+        "id": 90,
         "faculty": "ADMINISTRATION",
         "aggregate": 62.9,
     },
-    "LOCAL_GOVERNMENT_AND_DEV_STUDIES": {
-        "id": 90,
+    "LOCAL GOVERNMENT AND DEV STUDIES": {
+        "id": 91,
         "faculty": "ADMINISTRATION",
         "aggregate": 53.8,
     },
-    "BUSINESS_ADMINISTRATION": {
-        "id": 91,
+    "BUSINESS ADMINISTRATION": {
+        "id": 92,
         "faculty": "ADMINISTRATION",
         "aggregate": 62.08,
     },

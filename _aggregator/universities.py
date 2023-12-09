@@ -66,7 +66,7 @@ universities = [
         },
         {
             "id": 8,
-            "name": "Nnamdi Azikiwe University, Awka (UNIZIK)",
+            "name": "Nnamdi Azikiwe University (UNIZIK)",
             "about": about_uni[7]['description'],
             "aggr_year": "2022/2023",
             "courses": unizik_courses_,
