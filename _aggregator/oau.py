@@ -20,7 +20,7 @@ class Oau(University):
         print(
             "In order to be considered for admission "
             "into {} you must have at least 5 credits  "
-            "in 5 relevant subjects.".format(cls.uni_name)
+            "in 5 relevant subjects.\n".format(cls.uni_name)
         )
 
     @classmethod

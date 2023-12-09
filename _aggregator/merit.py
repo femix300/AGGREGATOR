@@ -70,12 +70,12 @@ class University:
 
     def display_name(self):
         index = self.get_uni_index()
-        return "{}".format(self.universities[index].get("name"))
+        print("{}".format(self.universities[index].get("name")))
 
     def about_uni(self):
         uni_index = self.get_uni_index()
         print()
-        print(self.display_name())
+        self.display_name()
         print()
         print(self.universities[uni_index].get("about"))
     

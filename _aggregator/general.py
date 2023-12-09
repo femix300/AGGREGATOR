@@ -7,11 +7,10 @@ from oau import Oau
 from unilag import Unilag
 from unn import Unn
 
-def start(uni_instance):
-    uni_instance.about_uni()
-    index = uni_instance.get_uni_index()
+def evaluate_and_recommend(_class_instance, universities):
+    index = _class_instance.get_uni_index()
     print()
-    courses = list(uni_instance.universities[index]["courses"].keys())
+    courses = list(_class_instance.universities[index]["courses"].keys())
 
     course_of_ch = pyip.inputMenu(
         courses,
@@ -20,15 +19,11 @@ def start(uni_instance):
     )
     print("\nYou selected {}\n".format(course_of_ch))
 
-    uni_instance.print_grades_info()
+    _class_instance.print_grades_info()
 
-    return index, course_of_ch
-
-
-def evaluate_and_recommend(uni, universities, index, course_of_ch):
     course_aggr = universities[index].get(
         "courses")[f"{course_of_ch}"]["aggregate"]
-    stu_aggr = uni.calculate_aggregate()
+    stu_aggr = _class_instance.calculate_aggregate()
     stu_aggr = round(stu_aggr, 2)
 
     if stu_aggr >= course_aggr:
@@ -59,6 +54,8 @@ def evaluate_and_recommend(uni, universities, index, course_of_ch):
             if course_of_ch != course:
                 same_faculty.append(details["faculty"])
 
+    qualified_to_study = None
+    
     if len(same_faculty) >= 1:
         qualified_to_study = {}
         for course, course_details in universities[index]["courses"].items():
@@ -86,10 +83,23 @@ def evaluate_and_recommend(uni, universities, index, course_of_ch):
     )
 
 
-def determine_post_utme_score(uni, course_of_ch, universities, index):
+def determine_post_utme_score(_class_instance, universities):
+    index = _class_instance.get_uni_index()
+    print()
+    courses = list(_class_instance.universities[index]["courses"].keys())
+
+    course_of_ch = pyip.inputMenu(
+        courses,
+        numbered=True,
+        prompt="Please enter one of the following (course name or serial number): \n",
+    )
+    print("\nYou selected {}\n".format(course_of_ch))
+
+    _class_instance.print_grades_info()
+
     course_aggr = universities[index].get(
         "courses")[f"{course_of_ch}"]["aggregate"]
-    required_score = uni.calculate_required_post_utme_score(course_aggr)
+    required_score = _class_instance.calculate_required_post_utme_score(course_aggr)
 
     if required_score is None:
         print("Currently Unavailable")
@@ -112,10 +122,11 @@ def determine_post_utme_score(uni, course_of_ch, universities, index):
             "in your post utme exams in order to be "
             "considered for admission.".format(required_score)
         )
-        print(
-            "If you're coming through predegree then you'll need "
-            "to score at least {} out of 100 marks.".format(pd_score)
-        )
+        if isinstance(_class_instance, Oau):
+            print(
+                "If you're coming through predegree then you'll need "
+                "to score at least {} out of 100 marks.".format(pd_score)
+            )
     else:
         print(
             "With your previous grades, in order to be considered "
@@ -146,25 +157,12 @@ def get_uni_id(universities):
         return None
     return uni_id
 
-def start(uni_instance):
-    uni_instance.about_uni()
-    index = uni_instance.get_uni_index()
-    print()
-    courses = list(uni_instance.universities[index]["courses"].keys())
 
-    course_of_ch = pyip.inputMenu(
-        courses,
-        numbered=True,
-        prompt="Please enter one of the following (course name or serial number): \n",
-    )
-    print("\nYou selected {}\n".format(course_of_ch))
-
-    uni_instance.print_grades_info()
-
-    return index, course_of_ch
-
-def entry_point(universities):
+def get_the_class_instance(universities):
     uni_id = get_uni_id(universities)
+
+    if uni_id is None:
+        return None
 
     uni_classes = {
         "1": Ui,
@@ -176,35 +174,40 @@ def entry_point(universities):
     uni_id_str = str(uni_id)
     _class = uni_classes[uni_id_str]
 
-    if uni_id:
-        _class_instance = _class(uni_id)
-        index, course_of_ch = start(_class_instance)
+    _class_instance = _class(uni_id)
 
-        options = {
-            "Calculate Aggregate": lambda: evaluate_and_recommend(_class_instance, universities, index, course_of_ch),
-            "Determine required POST UTME score": lambda: determine_post_utme_score(_class_instance, course_of_ch, universities, index),
-            "About University": _class_instance.about_uni,
-            "Display University Name": _class_instance.display_name,
-            "Display list of courses": _class_instance.list_courses,
-            "Display Faculties and Courses": _class_instance.display_faculties_and_courses,
-            "Display all Universities": _class_instance.display_universities,
-            "Exit": _class_instance.exit
-        }
-
-        choices = list(options.keys())
-
-        choice = pyip.inputMenu(
-            choices,
-            numbered=True,
-        )
-
-        selected_option = options[choice]
-
-        selected_option()
-        
-    else:
-        print("\nComing Soon!")
+    return _class_instance
 
 
 
-entry_point(universities)
+def entry_point(universities, _class_instance):
+
+    if not _class_instance:
+        print("Coming Soon!")
+        return 
+
+    options = {
+        "Calculate Aggregate": lambda: evaluate_and_recommend(_class_instance, universities),
+        "Determine required POST UTME score": lambda: determine_post_utme_score(_class_instance, universities),
+        "About University": _class_instance.about_uni,
+        "Display University Name": _class_instance.display_name,
+        "Display list of courses": _class_instance.list_courses,
+        "Display Faculties and Courses": _class_instance.display_faculties_and_courses,
+        "Display all Universities": _class_instance.display_universities,
+        "Exit": _class_instance.exit
+    }
+
+    choices = list(options.keys())
+
+    choice = pyip.inputMenu(
+        choices,
+        numbered=True,
+    )
+
+    selected_option = options[choice]
+
+    selected_option()
+
+
+_class_instance = get_the_class_instance(universities)
+entry_point(universities, _class_instance)
