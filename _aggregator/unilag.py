@@ -46,6 +46,6 @@ class Unilag(University):
     @classmethod
     def calculate_required_post_utme_score(cls, course_aggregate):
         olevel = Unilag.calculate_olevel()
-        utme = pyip.inputInt("Enter UTME score: ", min=200, max=400)
+        utme = pyip.inputInt("Enter UTME score: ", min=180, max=400)
         post_utme = course_aggregate - ((utme * 0.125) + olevel)
         return post_utme

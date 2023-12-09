@@ -2,9 +2,9 @@ from merit import University
 from universities import universities
 import pyinputplus as pyip
 
-class Ui(University):
+class Uniben(University):
 
-    uni_name = "University of Ibadan (UI)"
+    uni_name = "University of Benin (UNIBEN)"
 
     @classmethod
     def print_grades_info(cls):

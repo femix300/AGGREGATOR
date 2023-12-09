@@ -20,6 +20,8 @@ universities = [
         "about": about_uni[0]['description'],
         "aggr_year": "2021/2022",
         "courses": ui_courses_,
+        "olevel for aggr": False,
+        "total post utme": 100
         },
         {
             "id": 2,
@@ -27,6 +29,8 @@ universities = [
             "about": about_uni[1]['description'],
             "aggr_year": "2022/2023",
             "courses": unilag_courses_,
+            "olevel for aggr": True,
+            "total post utme": 30
         },
         {
             "id": 3,
@@ -34,6 +38,8 @@ universities = [
             "about": about_uni[2]['description'],
             "aggr_year": "2022/2023",
             "courses": unn_courses_,
+            "olevel for aggr": True,
+            "total post utme": 400
 
         },
         {
@@ -42,6 +48,8 @@ universities = [
             "about": about_uni[3]['description'],
             "aggr_year": "2022/2023",
             "courses": oau_courses_,
+            "olevel for aggr": True,
+            "total post utme": 40
         },
         {
             "id": 5,
@@ -49,6 +57,8 @@ universities = [
             "about": about_uni[4]['description'],
             "aggr_year": None,
             "courses": abu_courses_,
+            "olevel for aggr": None,
+            "total post utme": None
         },
         {
             "id": 6,
@@ -56,6 +66,8 @@ universities = [
             "about": about_uni[5]['description'],
             "aggr_year": None,
             "courses": unilorin_courses_,
+            "olevel for aggr": None,
+            "total post utme": None
         },
         {
             "id": 7,
@@ -63,6 +75,8 @@ universities = [
             "about": about_uni[6]['description'],
             "aggr_year": "2022/2023",
             "courses": futa_courses_,
+            "olevel for aggr": False,
+            "total post utme": 100
         },
         {
             "id": 8,
@@ -70,6 +84,8 @@ universities = [
             "about": about_uni[7]['description'],
             "aggr_year": "2022/2023",
             "courses": unizik_courses_,
+            "olevel for aggr": False,
+            "total post utme": 100
         },
         {
             "id": 9,
@@ -77,12 +93,16 @@ universities = [
             "about": about_uni[8]['description'],
             "aggr_year": "2022/2023",
             "courses": uniben_courses_,
+            "olevel for aggr": False,
+            "total post utme": 100
         },
         {
             "id": 10,
             "name": "Federal University Oye Ekiti (FUOYE)",
             "about": about_uni[9]['description'],
             "aggr_year": None,
-            "courses": fuoye_courses_
+            "courses": fuoye_courses_,
+            "olevel for aggr": None,
+            "total post utme": None
         }
 ]

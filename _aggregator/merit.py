@@ -30,6 +30,7 @@ class University:
         for uni in self.universities:
             if uni.get("id") == self.id:
                 uni_index = universities.index(uni)
+                self.uni_index = uni_index
                 return uni_index
 
     def get_courses(self):

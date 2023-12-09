@@ -6,6 +6,10 @@ from ui import Ui
 from oau import Oau
 from unilag import Unilag
 from unn import Unn
+from futa import Futa
+from unizik import Unizik
+from uniben import Uniben
+
 
 def evaluate_and_recommend(_class_instance, universities):
     index = _class_instance.get_uni_index()
@@ -55,7 +59,7 @@ def evaluate_and_recommend(_class_instance, universities):
                 same_faculty.append(details["faculty"])
 
     qualified_to_study = None
-    
+
     if len(same_faculty) >= 1:
         qualified_to_study = {}
         for course, course_details in universities[index]["courses"].items():
@@ -87,6 +91,8 @@ def determine_post_utme_score(_class_instance, universities):
     index = _class_instance.get_uni_index()
     print()
     courses = list(_class_instance.universities[index]["courses"].keys())
+    post_utme_mark = _class_instance.universities[index]["total post utme"]
+    pass_mark = post_utme_mark / 2
 
     course_of_ch = pyip.inputMenu(
         courses,
@@ -99,28 +105,31 @@ def determine_post_utme_score(_class_instance, universities):
 
     course_aggr = universities[index].get(
         "courses")[f"{course_of_ch}"]["aggregate"]
-    required_score = _class_instance.calculate_required_post_utme_score(course_aggr)
+    required_score = _class_instance.calculate_required_post_utme_score(
+        course_aggr)
 
     if required_score is None:
         print("Currently Unavailable")
         return
-
+    
+    # for OAU only
     pd_score = required_score / 0.4
 
-    if required_score < 25:
-        required_score = 25
+    if required_score < pass_mark:
+        required_score = pass_mark
         if pd_score < 60:
             pd_score = 60
 
     required_score = int(round(required_score))
+    # for OAU only
     pd_score = round(pd_score, 1)
 
-    if required_score <= 40:
+    if required_score <= post_utme_mark:
         print(
-            "Based on your O-level and UTME score, "
+            "Based on your grades, "
             "you are required to score at least {} "
             "in your post utme exams in order to be "
-            "considered for admission.".format(required_score)
+            "considered for admission.".format(required_score + 1) #added one to be a little bit above
         )
         if isinstance(_class_instance, Oau):
             print(
@@ -129,21 +138,25 @@ def determine_post_utme_score(_class_instance, universities):
             )
     else:
         print(
-            "With your previous grades, in order to be considered "
+            "Based on your grades, in order to be considered "
             "for admission to study {}, you'll have to score at least {} "
             "out of {} marks which is simply impossible.".format(
-                course_of_ch, required_score, 40
+                course_of_ch, required_score, post_utme_mark
             )
         )
 
 
 def get_uni_id(universities):
     university_names = [uni["name"] for uni in universities]
+    university_names.append("Exit")
     uni_name = pyip.inputMenu(
         university_names,
         numbered=True,
         prompt="Please enter one of the following "
         "(serial number or university name)\n")
+
+    if uni_name == "Exit":
+        sys.exit("\nThanks for using Merit!")
 
     print("\nYou selected {}\n".format(uni_name))
 
@@ -169,6 +182,9 @@ def get_the_class_instance(universities):
         "2": Unilag,
         "3": Unn,
         "4": Oau,
+        "7": Futa,
+        "8": Unizik,
+        "9": Uniben,
     }
 
     uni_id_str = str(uni_id)
@@ -179,12 +195,11 @@ def get_the_class_instance(universities):
     return _class_instance
 
 
-
 def entry_point(universities, _class_instance):
 
     if not _class_instance:
         print("Coming Soon!")
-        return 
+        return
 
     options = {
         "Calculate Aggregate": lambda: evaluate_and_recommend(_class_instance, universities),
@@ -209,5 +224,8 @@ def entry_point(universities, _class_instance):
     selected_option()
 
 
-_class_instance = get_the_class_instance(universities)
-entry_point(universities, _class_instance)
+print("\n===============================Home=================================\n")
+while True:
+    _class_instance = get_the_class_instance(universities)
+    entry_point(universities, _class_instance)
+    print("\n===============================Home=================================\n")
