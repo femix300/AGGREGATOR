@@ -204,6 +204,7 @@ def entry_point(universities, _class_instance):
     options = {
         "Calculate Aggregate": lambda: evaluate_and_recommend(_class_instance, universities),
         "Determine required POST UTME score": lambda: determine_post_utme_score(_class_instance, universities),
+        "Get the required score to study your dream course": _class_instance.get_course_aggregate,
         "About University": _class_instance.about_uni,
         "Display University Name": _class_instance.display_name,
         "Display list of courses": _class_instance.list_courses,
