@@ -35,15 +35,18 @@ class University:
         course_of_ch = pyip.inputMenu(
             courses,
             numbered=True,
-            prompt="Please enter one of the following (course name or serial number): \n",
+            prompt="Please enter one of the following "
+            "(course name or serial number): \n",
         )
 
         print("\nYou selected {}\n".format(course_of_ch))
 
-        course_aggregate = universities[index]["courses"][course_of_ch]["aggregate"]
+        course = universities[index]["courses"][course_of_ch]
+        course_aggregate = course["aggregate"]
         uni_name = self.universities[index].get("name")
         print(
-            "In order to study {} at {} you need to achieve an aggregate score of {}".format(
+            "In order to study {} at {} you need to achieve "
+            "an aggregate score of {}".format(
                 course_of_ch, uni_name, course_aggregate
             )
         )
@@ -72,7 +75,8 @@ class University:
                 faculties[c_details["faculty"]].append(course)
 
             print(
-                "List of faculties under {} with their respective Departments:".format(
+                "List of faculties under {} with their "
+                "respective Departments:".format(
                     universities[index].get("name")
                 )
             )

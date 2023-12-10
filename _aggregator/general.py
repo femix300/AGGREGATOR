@@ -1,14 +1,13 @@
 import sys
-from merit import University
 from universities import universities
 import pyinputplus as pyip
-from ui import Ui
-from oau import Oau
-from unilag import Unilag
-from unn import Unn
-from futa import Futa
-from unizik import Unizik
-from uniben import Uniben
+from unilogics.ui import Ui
+from unilogics.oau import Oau
+from unilogics.unilag import Unilag
+from unilogics.unn import Unn
+from unilogics.futa import Futa
+from unilogics.unizik import Unizik
+from unilogics.uniben import Uniben
 
 
 def evaluate_and_recommend(_class_instance, universities):
@@ -19,7 +18,8 @@ def evaluate_and_recommend(_class_instance, universities):
     course_of_ch = pyip.inputMenu(
         courses,
         numbered=True,
-        prompt="Please enter one of the following (course name or serial number): \n",
+        prompt="Please enter one of the following "
+        "(course name or serial number): \n",
     )
     print("\nYou selected {}\n".format(course_of_ch))
 
@@ -96,7 +96,8 @@ def determine_post_utme_score(_class_instance, universities):
     course_of_ch = pyip.inputMenu(
         courses,
         numbered=True,
-        prompt="Please enter one of the following (course name or serial number): \n",
+        prompt="Please enter one of the following "
+        "(course name or serial number): \n",
     )
     print("\nYou selected {}\n".format(course_of_ch))
 
@@ -167,7 +168,8 @@ def get_uni_id(universities):
             # 1 was added to solve indexing issues
             uni_id = universities.index(uni) + 1
 
-    # I substracted 1 from the id here to prevent errors, but 1 will be substracted later
+    # I substracted 1 from the id here to prevent errors
+    # but 1 will be added later
     if not universities[uni_id - 1]["courses"]:
         return None
     return uni_id
@@ -206,14 +208,17 @@ def entry_point(universities, _class_instance):
         "Calculate Aggregate": lambda: evaluate_and_recommend(
             _class_instance, universities
         ),
-        "Determine required POST UTME score": lambda: determine_post_utme_score(
-            _class_instance, universities
-        ),
-        "Get the required score to study your dream course": _class_instance.get_course_aggregate,
+        "Determine required POST UTME score":
+        lambda: determine_post_utme_score(_class_instance, universities
+                                          ),
+        "Get the required score to study your dream course":
+        _class_instance.get_course_aggregate,
         "About University": _class_instance.about_uni,
         "Display University Name": _class_instance.display_name,
-        "Display list of courses": _class_instance.list_courses,
-        "Display Faculties and Courses": _class_instance.display_faculties_and_courses,
+        "Display list of courses":
+        _class_instance.list_courses,
+        "Display Faculties and Courses":
+        _class_instance.display_faculties_and_courses,
         "Display all Universities": _class_instance.display_universities,
         "Exit": _class_instance.exit,
     }
@@ -230,8 +235,8 @@ def entry_point(universities, _class_instance):
     selected_option()
 
 
-print("\n===============================Home=================================\n")
+print("\n===============================Home===============================\n")
 while True:
     _class_instance = get_the_class_instance(universities)
     entry_point(universities, _class_instance)
-    print("\n===============================Home=================================\n")
+    print("\n===============================Home===========================\n")

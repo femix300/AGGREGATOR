@@ -1,5 +1,4 @@
 from merit import University
-from universities import universities
 import pyinputplus as pyip
 
 
