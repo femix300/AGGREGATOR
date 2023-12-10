@@ -1,9 +1,8 @@
 from merit import University
-from universities import universities
 import pyinputplus as pyip
 
-class Unn(University):
 
+class Unn(University):
     uni_name = "University of Nigeria, Nsukka (UNN)"
 
     unn_olevel = {
@@ -30,10 +29,10 @@ class Unn(University):
             grade = pyip.inputMenu(
                 list(Unn.unn_olevel.keys()),
                 numbered=True,
-                prompt="Enter grade for subject({}): \n".format(i + 1)
+                prompt="Enter grade for subject({}): \n".format(i + 1),
             ).upper()
             total += cls.unn_olevel[grade]["value"]
-        
+
         return round(total, 3)
 
     @classmethod
@@ -46,4 +45,3 @@ class Unn(University):
     @classmethod
     def calculate_required_post_utme_score(cls, course_aggregate):
         return None
-

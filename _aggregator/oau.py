@@ -1,9 +1,8 @@
 from merit import University
-from universities import universities
 import pyinputplus as pyip
 
-class Oau(University):
 
+class Oau(University):
     uni_name = "Obafemi Awolowo University (OAU)"
 
     oau_olevel = {
@@ -30,7 +29,7 @@ class Oau(University):
             grade = pyip.inputMenu(
                 list(Oau.oau_olevel.keys()),
                 numbered=True,
-                prompt="Enter grade for subject({}): \n".format(i + 1)
+                prompt="Enter grade for subject({}): \n".format(i + 1),
             ).upper()
             total += cls.oau_olevel[grade]["value"]
         return round(total, 3)
@@ -49,4 +48,3 @@ class Oau(University):
         utme = pyip.inputInt("Enter UTME score: ", min=200, max=400)
         post_utme = course_aggregate - ((utme * 0.125) + olevel)
         return post_utme
-

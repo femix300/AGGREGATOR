@@ -1,9 +1,8 @@
 from merit import University
-from universities import universities
 import pyinputplus as pyip
 
-class Unilag(University):
 
+class Unilag(University):
     uni_name = "University of Lagos (UNILAG)"
 
     unilag_olevel = {
@@ -30,7 +29,7 @@ class Unilag(University):
             grade = pyip.inputMenu(
                 list(Unilag.unilag_olevel.keys()),
                 numbered=True,
-                prompt="Enter grade for subject({}): \n".format(i + 1)
+                prompt="Enter grade for subject({}): \n".format(i + 1),
             ).upper()
             total += cls.unilag_olevel[grade]["value"]
         return round(total, 3)

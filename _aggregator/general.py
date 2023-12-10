@@ -34,8 +34,7 @@ def evaluate_and_recommend(_class_instance, universities):
         print(
             "Congratulations! You met the requirements to "
             "study {} at {}.".format(
-                course_of_ch, universities[index].get("name")
-            )
+                course_of_ch, universities[index].get("name"))
         )
     else:
         print(
@@ -75,7 +74,7 @@ def evaluate_and_recommend(_class_instance, universities):
             "that share the same faculty as {}: ".format(course_of_ch)
         )
         for i, (course, aggregate) in enumerate(qualified_to_study.items()):
-            print("{}. {} ({})".format(i+1, course, aggregate))
+            print("{}. {} ({})".format(i + 1, course, aggregate))
 
     print(
         "Please note that this was determined by the departmental "
@@ -111,7 +110,7 @@ def determine_post_utme_score(_class_instance, universities):
     if required_score is None:
         print("Currently Unavailable")
         return
-    
+
     # for OAU only
     pd_score = required_score / 0.4
 
@@ -129,7 +128,9 @@ def determine_post_utme_score(_class_instance, universities):
             "Based on your grades, "
             "you are required to score at least {} "
             "in your post utme exams in order to be "
-            "considered for admission.".format(required_score + 1) #added one to be a little bit above
+            "considered for admission.".format(
+                required_score + 1
+            )  # added one to be a little bit above
         )
         if isinstance(_class_instance, Oau):
             print(
@@ -153,7 +154,8 @@ def get_uni_id(universities):
         university_names,
         numbered=True,
         prompt="Please enter one of the following "
-        "(serial number or university name)\n")
+        "(serial number or university name)\n",
+    )
 
     if uni_name == "Exit":
         sys.exit("\nThanks for using Merit!")
@@ -163,7 +165,7 @@ def get_uni_id(universities):
     for uni in universities:
         if uni["name"] == uni_name:
             # 1 was added to solve indexing issues
-            uni_id = (universities.index(uni) + 1)
+            uni_id = universities.index(uni) + 1
 
     # I substracted 1 from the id here to prevent errors, but 1 will be substracted later
     if not universities[uni_id - 1]["courses"]:
@@ -196,21 +198,24 @@ def get_the_class_instance(universities):
 
 
 def entry_point(universities, _class_instance):
-
     if not _class_instance:
         print("Coming Soon!")
         return
 
     options = {
-        "Calculate Aggregate": lambda: evaluate_and_recommend(_class_instance, universities),
-        "Determine required POST UTME score": lambda: determine_post_utme_score(_class_instance, universities),
+        "Calculate Aggregate": lambda: evaluate_and_recommend(
+            _class_instance, universities
+        ),
+        "Determine required POST UTME score": lambda: determine_post_utme_score(
+            _class_instance, universities
+        ),
         "Get the required score to study your dream course": _class_instance.get_course_aggregate,
         "About University": _class_instance.about_uni,
         "Display University Name": _class_instance.display_name,
         "Display list of courses": _class_instance.list_courses,
         "Display Faculties and Courses": _class_instance.display_faculties_and_courses,
         "Display all Universities": _class_instance.display_universities,
-        "Exit": _class_instance.exit
+        "Exit": _class_instance.exit,
     }
 
     choices = list(options.keys())

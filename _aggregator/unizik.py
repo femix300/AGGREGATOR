@@ -1,9 +1,8 @@
 from merit import University
-from universities import universities
 import pyinputplus as pyip
 
-class Unizik(University):
 
+class Unizik(University):
     uni_name = "Nnamdi Azikiwe University (UNIZIK)"
 
     @classmethod
@@ -18,7 +17,7 @@ class Unizik(University):
     def calculate_aggregate(cls):
         utme = pyip.inputInt("Enter UTME score: ", min=200, max=400)
         post_utme = pyip.inputInt("Enter POST UTME score: ", min=0, max=100)
-        aggregate = ((utme) + (post_utme * 4) / 2)
+        aggregate = (utme) + (post_utme * 4) / 2
         return round(aggregate, 4)
 
     @classmethod

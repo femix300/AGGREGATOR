@@ -2,8 +2,8 @@ from merit import University
 from universities import universities
 import pyinputplus as pyip
 
-class Futa(University):
 
+class Futa(University):
     uni_name = "The Federal University of Technology, Akure(FUTA)"
 
     @classmethod

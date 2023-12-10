@@ -2,7 +2,7 @@ from universities import universities
 from collections import defaultdict
 import sys
 
-'''
+"""
 for uni in universities:
     print("{}. {}".format(uni["id"], uni["name"]))
 print()
@@ -35,7 +35,7 @@ for faculty, courses in faculties.items():
     for i, course in enumerate(courses, start=1):
         print("{}. {}".format(i, course))
     print()
-'''
+"""
 
 for uni in universities:
     print("{}. {}".format(uni["id"], uni["name"]))
@@ -49,16 +49,21 @@ c_faculty = universities[id].get("courses")[f"{course_of_ch}"]["faculty"]
 utme_score = int(input("Enter your utme score: "))
 post_utme = float(input("Enter your post utme score: "))
 
-stu_aggr = (utme_score / 8) + ((post_utme/100) * 50)
+stu_aggr = (utme_score / 8) + ((post_utme / 100) * 50)
 
 if stu_aggr >= course_aggr:
     print(
-        f"congratulations you met the requirements to study {course_of_ch} at {universities[id].get('name')}")
+        f"congratulations you met the requirements to study {course_of_ch} at {universities[id].get('name')}"
+    )
 else:
     print(
-        f"Did not meet the requirements to study {course_of_ch} at {universities[id].get('name')}")
-print("The required score was {} and your final aggregate score was {}".format(
-    course_aggr, stu_aggr))
+        f"Did not meet the requirements to study {course_of_ch} at {universities[id].get('name')}"
+    )
+print(
+    "The required score was {} and your final aggregate score was {}".format(
+        course_aggr, stu_aggr
+    )
+)
 
 
 same_faculty = []
@@ -69,7 +74,11 @@ for course, details in universities[id]["courses"].items():
 
 
 if len(same_faculty) >= 1:
-    print("You're qualified to study the following courses that share the same faculty as {}: ".format(course_of_ch))
+    print(
+        "You're qualified to study the following courses that share the same faculty as {}: ".format(
+            course_of_ch
+        )
+    )
 
     i = 1
     for course, course_details in universities[id]["courses"].items():
@@ -83,6 +92,9 @@ if len(same_faculty) >= 1:
                         i, course, course_details["aggregate"]))
                     i += 1
 
-print("Please note that this was determined by the departmental cut off mark set by {} in the year {}"
-      " and may not accurately reflect recent developments.".format(universities[id].get("name", ""),
-                                                                    universities[id].get("aggr_year", "")))
+print(
+    "Please note that this was determined by the departmental cut off mark set by {} in the year {}"
+    " and may not accurately reflect recent developments.".format(
+        universities[id].get("name", ""), universities[id].get("aggr_year", "")
+    )
+)

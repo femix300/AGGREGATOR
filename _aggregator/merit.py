@@ -5,19 +5,7 @@ import sys
 import pyinputplus as pyip
 
 
-class Student:
-
-    def __init__(self, utme, olevel, post_utme):
-        self.utme = utme
-        self.olevel = olevel
-        self.post_utme = post_utme
-
-    def calculate_aggr(self):
-        return (self.utme / 8) + self.olevel + (self.post_utme * 0.4)
-
-
 class University:
-
     universities = universities
 
     def __init__(self, id):
@@ -54,17 +42,23 @@ class University:
 
         course_aggregate = universities[index]["courses"][course_of_ch]["aggregate"]
         uni_name = self.universities[index].get("name")
-        print("In order to study {} at {} you need to achieve an aggregate score of {}".format(
-            course_of_ch, uni_name, course_aggregate))
+        print(
+            "In order to study {} at {} you need to achieve an aggregate score of {}".format(
+                course_of_ch, uni_name, course_aggregate
+            )
+        )
 
         return course_aggregate
 
     def list_courses(self):
         index = self.get_uni_index()
-        print("List of Courses offered in {}".format(
-            self.universities[index].get("name")))
-        phrase_len = len(self.universities[index].get(
-            "name")) + len("List of Courses offered in ")
+        print(
+            "List of Courses offered in {}".format(
+                self.universities[index].get("name"))
+        )
+        phrase_len = len(self.universities[index].get("name")) + len(
+            "List of Courses offered in "
+        )
         print("=" * phrase_len)
         for course, course_details in self.get_courses().items():
             print("{}. {}".format(course_details["id"], course))
@@ -77,10 +71,14 @@ class University:
             for course, c_details in courses.items():
                 faculties[c_details["faculty"]].append(course)
 
-            print("List of faculties under {} with their respective Departments:".format(
-                universities[index].get("name")))
-            phrase_len = len(self.universities[index].get(
-                "name")) + len("List of faculties under  with their respective Departments:")
+            print(
+                "List of faculties under {} with their respective Departments:".format(
+                    universities[index].get("name")
+                )
+            )
+            phrase_len = len(self.universities[index].get("name")) + len(
+                "List of faculties under  with their respective Departments:"
+            )
             print("=" * phrase_len)
 
             for faculty, courses in faculties.items():
