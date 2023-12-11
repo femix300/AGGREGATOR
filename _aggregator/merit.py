@@ -9,6 +9,7 @@ class University:
     universities = universities
 
     """Initializes a university with an id"""
+
     def __init__(self, id):
         self.id = id
 
@@ -56,6 +57,7 @@ class University:
                 course_of_ch, uni_name, course_aggregate)
         )
 
+        self.disclaimer_info()
         return course_aggregate
 
     def list_courses(self):
@@ -113,6 +115,18 @@ class University:
         self.display_name()
         print()
         print(self.universities[uni_index].get("about"))
+
+    def disclaimer_info(self):
+        index = self.get_uni_index()
+        universities = self.universities
+        print(
+            "\nPlease note that this was determined by the departmental "
+            "cut off mark set by {} in the year {} and may not accurately "
+            "reflect recent developments.\n".format(
+                universities[index].get("name", ""),
+                universities[index].get("aggr_year", ""),
+            )
+        )
 
     def exit(self):
         """Exits the program"""

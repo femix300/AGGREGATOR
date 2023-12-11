@@ -11,6 +11,12 @@ from unilogics.uniben import Uniben
 
 
 def evaluate_and_recommend(_class_instance, universities):
+    """
+    Takes in a class instance and the universities list.
+
+    Gets the user's course of choice, calculates their aggregate,
+    and prints out corresponding information.
+    """
     index = _class_instance.get_uni_index()
     print()
     courses = list(_class_instance.universities[index]["courses"].keys())
@@ -76,14 +82,7 @@ def evaluate_and_recommend(_class_instance, universities):
         for i, (course, aggregate) in enumerate(qualified_to_study.items()):
             print("{}. {} ({})".format(i + 1, course, aggregate))
 
-    print(
-        "Please note that this was determined by the departmental "
-        "cut off mark set by {} in the year {} and may not accurately "
-        "reflect recent developments.".format(
-            universities[index].get("name", ""),
-            universities[index].get("aggr_year", ""),
-        )
-    )
+    _class_instance.disclaimer_info()
 
 
 def determine_post_utme_score(_class_instance, universities):
@@ -146,6 +145,7 @@ def determine_post_utme_score(_class_instance, universities):
                 course_of_ch, required_score, post_utme_mark
             )
         )
+    _class_instance.disclaimer_info()
 
 
 def get_uni_id(universities):
@@ -223,16 +223,20 @@ def entry_point(universities, _class_instance):
         "Exit": _class_instance.exit,
     }
 
-    choices = list(options.keys())
+    while True:
+        choices = list(options.keys())
 
-    choice = pyip.inputMenu(
-        choices,
-        numbered=True,
-    )
+        choice = pyip.inputMenu(
+            choices,
+            numbered=True,
+        )
 
-    selected_option = options[choice]
+        if choice == "Exit":
+            break
 
-    selected_option()
+        selected_option = options[choice]
+
+        selected_option()
 
 
 print("\n===============================Home===============================\n")
