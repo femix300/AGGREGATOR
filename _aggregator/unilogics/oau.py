@@ -1,8 +1,16 @@
 from merit import University
 import pyinputplus as pyip
 
+"""Defines the Oau class"""
+
 
 class Oau(University):
+
+    """
+    Contains unique methods aggregate calculation
+    and post utme score prediction
+    """
+
     uni_name = "Obafemi Awolowo University (OAU)"
 
     oau_olevel = {

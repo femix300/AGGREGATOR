@@ -1,4 +1,3 @@
-# Creates a Python dictionary that stores information about universities
 from about_universities import about_uni
 from courses.ui_courses import ui_courses_
 from courses.unilag_courses import unilag_courses_
@@ -11,6 +10,10 @@ from courses.unizik_courses import unizik_courses_
 from courses.uniben_courses import uniben_courses_
 from courses.fuoye_courses import fuoye_courses_
 
+"""
+universities is a list of dicationaries that
+contains important info about each university
+"""
 
 universities = [
     {

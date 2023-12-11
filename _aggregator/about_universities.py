@@ -1,3 +1,6 @@
+"""
+Contains basic information about each university.
+"""
 about_uni = [
     {
         "name": "University of Ibadan (UI)",

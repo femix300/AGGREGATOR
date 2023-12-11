@@ -1,8 +1,16 @@
 from merit import University
 import pyinputplus as pyip
 
+"""Defines the Unizik class"""
+
 
 class Unizik(University):
+
+    """
+    Contains unique methods for aggregate calculation
+    and post utme score prediction
+    """
+
     uni_name = "Nnamdi Azikiwe University (UNIZIK)"
 
     @classmethod

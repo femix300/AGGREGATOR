@@ -65,6 +65,8 @@ def evaluate_and_recommend(_class_instance, universities):
 
     qualified_to_study = None
 
+    """create a dictionary that contains all
+    the courses a use is qualifies to study"""
     if len(same_faculty) >= 1:
         qualified_to_study = {}
         for course, course_details in universities[index]["courses"].items():
@@ -86,10 +88,18 @@ def evaluate_and_recommend(_class_instance, universities):
 
 
 def determine_post_utme_score(_class_instance, universities):
+    """
+    Takes in a class instance and the universities list
+
+    Predicts the post utme score needed for a particulat course
+    using existing credentials.
+    """
     index = _class_instance.get_uni_index()
     print()
     courses = list(_class_instance.universities[index]["courses"].keys())
     post_utme_mark = _class_instance.universities[index]["total post utme"]
+
+    # pass mark is half the total, could be different in some schools.
     pass_mark = post_utme_mark / 2
 
     course_of_ch = pyip.inputMenu(
@@ -111,7 +121,6 @@ def determine_post_utme_score(_class_instance, universities):
         print("Currently Unavailable")
         return
 
-    # for OAU only
     pd_score = required_score / 0.4
 
     if required_score < pass_mark:
@@ -120,7 +129,7 @@ def determine_post_utme_score(_class_instance, universities):
             pd_score = 60
 
     required_score = int(round(required_score))
-    # for OAU only
+
     pd_score = round(pd_score, 1)
 
     if required_score <= post_utme_mark:
@@ -132,6 +141,7 @@ def determine_post_utme_score(_class_instance, universities):
                 required_score + 1
             )  # added one to be a little bit above
         )
+        # pd score only works with OAU for now
         if isinstance(_class_instance, Oau):
             print(
                 "If you're coming through predegree then you'll need "
@@ -149,6 +159,10 @@ def determine_post_utme_score(_class_instance, universities):
 
 
 def get_uni_id(universities):
+    """
+    Enables a user to select a university
+    Returns the id/serial number of that university.
+    """
     university_names = [uni["name"] for uni in universities]
     university_names.append("Exit")
     uni_name = pyip.inputMenu(
@@ -176,6 +190,9 @@ def get_uni_id(universities):
 
 
 def get_the_class_instance(universities):
+    """
+    creates and returns a class instance using the uni id.
+    """
     uni_id = get_uni_id(universities)
 
     if uni_id is None:
@@ -191,6 +208,7 @@ def get_the_class_instance(universities):
         "9": Uniben,
     }
 
+    """puts the id in string format to support indexing into the dictionary."""
     uni_id_str = str(uni_id)
     _class = uni_classes[uni_id_str]
 
@@ -200,6 +218,11 @@ def get_the_class_instance(universities):
 
 
 def entry_point(universities, _class_instance):
+    """The main entry point to the program,
+    creates an options dictionary that has keys as choices for the user
+    and values that are methods/functions that are called based on the user's
+    choice.
+    """
     if not _class_instance:
         print("Coming Soon!")
         return
@@ -223,9 +246,12 @@ def entry_point(universities, _class_instance):
         "Exit": _class_instance.exit,
     }
 
+    """Unless the user selects exit this loop will let them use
+    multiple features of merit on the same university"""
     while True:
         choices = list(options.keys())
 
+        print()
         choice = pyip.inputMenu(
             choices,
             numbered=True,

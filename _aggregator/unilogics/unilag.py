@@ -1,8 +1,16 @@
 from merit import University
 import pyinputplus as pyip
 
+"""Defines the Unilag class"""
+
 
 class Unilag(University):
+
+    """
+    Contains unique methods for aggregate calculation
+    and post utme score prediction
+    """
+
     uni_name = "University of Lagos (UNILAG)"
 
     unilag_olevel = {

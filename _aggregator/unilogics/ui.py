@@ -1,8 +1,16 @@
 from merit import University
 import pyinputplus as pyip
 
+"""Defines the Ui class"""
+
 
 class Ui(University):
+
+    """
+    Contains unique methods for aggregate calculation
+    and post utme score prediction
+    """
+
     uni_name = "University of Ibadan (UI)"
 
     @classmethod

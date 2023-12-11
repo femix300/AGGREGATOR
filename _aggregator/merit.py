@@ -8,19 +8,19 @@ import pyinputplus as pyip
 class University:
     universities = universities
 
-    """Initializes a university with an id"""
+    """Initializes a university with an id."""
 
     def __init__(self, id):
         self.id = id
 
     def display_universities(self):
-        """Displays all universities"""
+        """Displays all universities."""
         for uni in self.universities:
             print("{}. {}".format(uni.get("id"), uni.get("name")))
 
     def get_uni_index(self):
         """Get's the index of a particular
-        university in the universities list"""
+        university in the universities list."""
         for uni in self.universities:
             if uni.get("id") == self.id:
                 uni_index = universities.index(uni)
@@ -28,13 +28,13 @@ class University:
                 return uni_index
 
     def get_courses(self):
-        """Get's all the courses in a selected university"""
+        """Get's all the courses in a selected university."""
         uni_index = self.get_uni_index()
         courses = self.universities[uni_index].get("courses")
         return courses
 
     def get_course_aggregate(self):
-        """Get's the aggregate score to a selected course"""
+        """Get's the aggregate score to a selected course."""
         index = self.get_uni_index()
         courses = list(self.universities[index]["courses"].keys())
 
@@ -61,7 +61,7 @@ class University:
         return course_aggregate
 
     def list_courses(self):
-        """Lists out all the courses offered in a selected university"""
+        """Lists out all the courses offered in a selected university."""
         index = self.get_uni_index()
         print(
             "List of Courses offered in {}".format(
@@ -76,7 +76,7 @@ class University:
 
     def display_faculties_and_courses(self):
         """Displays all the faculties and courses under
-        them in a selected university"""
+        them in a selected university."""
         courses = self.get_courses()
         index = self.get_uni_index()
         if courses:
@@ -104,12 +104,12 @@ class University:
             print("Pending...")
 
     def display_name(self):
-        """Prints out the name of a selected university"""
+        """Prints out the name of a selected university."""
         index = self.get_uni_index()
         print("{}".format(self.universities[index].get("name")))
 
     def about_uni(self):
-        """Displays information about a selected university"""
+        """Displays information about a selected university."""
         uni_index = self.get_uni_index()
         print()
         self.display_name()
@@ -117,6 +117,7 @@ class University:
         print(self.universities[uni_index].get("about"))
 
     def disclaimer_info(self):
+        """Prints disclaimer info."""
         index = self.get_uni_index()
         universities = self.universities
         print(
@@ -129,5 +130,5 @@ class University:
         )
 
     def exit(self):
-        """Exits the program"""
+        """Exits the program."""
         sys.exit("Thanks for using Merit")

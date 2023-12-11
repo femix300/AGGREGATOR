@@ -1,8 +1,16 @@
 from merit import University
 import pyinputplus as pyip
 
+"""Defines the Unn class"""
+
 
 class Unn(University):
+
+    """
+    Contains unique methods for aggregate calculation
+    and post utme score prediction
+    """
+
     uni_name = "University of Nigeria, Nsukka (UNN)"
 
     unn_olevel = {
