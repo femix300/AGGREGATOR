@@ -17,3 +17,24 @@ This project was built to aid Nigerian students in their admission process into 
 ## Here's a Screenshot!
 
 ![Merit](<Merit Screenshot.png>)
+
+## How to use Merit!
+
+1. Clone this project to your local machine using the command line on (ubuntu, Vs code) e.t.c
+2. Install python
+
+    ### For Linux/Ubuntu:
+    'sudo apt-get update'
+    'sudo apt-get install python3'
+
+    ### For macOS:
+    'brew install python'
+
+    ### For Windows:
+    'choco install python'
+
+
+    You can verify if python installation was successful by running 'python --version'
+
+
+3. Run this command to install the package Pyinputplus 'pip install pyinputplus' or 'pip3 install pyinputplus'
