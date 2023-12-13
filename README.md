@@ -58,7 +58,7 @@ If you found an issue with merit or would like to submit an improvement to this 
 Merit is currently in need of a frontend application and an awesome graphical user interface.
 
 ## Known Issues (Work in progress)
-* Merit currently supports only 10 Univerities out of which only 7 are fully functional.
+* Merit currently supports 10 Universities out of which only 7 are fully functional.
 * Storing departmental cut off marks data in mysql is being worked on.
 * Some schools have made their departmental cut off marks and mode of admission private.
 
