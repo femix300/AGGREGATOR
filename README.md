@@ -44,10 +44,10 @@ This project was built to aid Nigerian students in their admission process into 
     a. Typing out the action.
     ![Typing out the action](image.png)
 
-    b. Entering the serial Number to the action.
+    b. Entering the serial number to the action.
     ![Enterting the serial no](image-1.png)
 
-    You can enter a course using this same technique. Entering credentials is will require you to explicitly type out your grades.
+    You can enter a course using this same technique. Entering credentials will require you to explicitly type out your grades.
 
 6. Thanks for using Merit!
 
