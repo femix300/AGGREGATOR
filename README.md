@@ -36,5 +36,31 @@ This project was built to aid Nigerian students in their admission process into 
 
     You can verify if python installation was successful by running 'python --version'
 
-
 3. Run this command to install the package Pyinputplus 'pip install pyinputplus' or 'pip3 install pyinputplus'
+
+4. Start Merit by running the command 'python3 general.py'
+
+5. You can navigate/perform an action in merit by typing out the action or just entering the serial number to the action which is much easier.
+    a. Typing out the action.
+    ![Typing out the action](image.png)
+
+    b. Entering the serial Number to the action.
+    ![Enterting the serial no](image-1.png)
+
+    You can enter a course using this same technique. Entering credentials is will require you to explicitly type out your grades.
+
+6. Thanks for using Merit!
+
+## Find a bug?
+If you found an issue with merit or would like to submit an improvement to this project, please submit an issue using the issues tab.
+
+## Contribute?
+Merit is currently in need of a frontend application and an awesome graphical user interface.
+
+## Known Issues (Work in progress)
+* Merit currently supports only 10 Univerities out of which only 7 are fully functional.
+* Storing departmental cut off marks data in mysql is being worked on.
+* Some schools have made their departmental cut off marks and mode of admission private.
+
+## Like this project?
+Contact me on whatsapp => +2348101457299
