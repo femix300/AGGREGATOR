@@ -16,7 +16,7 @@ This project was built to aid Nigerian students in their admission process into 
 
 ## Here's a Screenshot!
 
-![Merit](<Merit Screenshot.png>)
+![Merit](<images/Merit Screenshot.png>)
 
 ## How to use Merit!
 
@@ -42,10 +42,10 @@ This project was built to aid Nigerian students in their admission process into 
 
 5. You can navigate/perform an action in merit by typing out the action or just entering the serial number to the action which is much easier.
     a. Typing out the action.
-    ![Typing out the action](image.png)
+    ![Typing out the action](images/image.png)
 
     b. Entering the serial number to the action.
-    ![Enterting the serial no](image-1.png)
+    ![Enterting the serial no](images/image-1.png)
 
     You can enter a course using this same technique. Entering credentials will require you to explicitly type out your grades.
 
