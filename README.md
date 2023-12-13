@@ -1,4 +1,4 @@
-# AGGREGATOR
+# MERIT
 
 ## A program that helps check if students are qualified to study their dream course in their dream University by using their credentials.
 
