@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-This module creates a database of University of Cape Town's faculties,
+This module creates a database of University of Stellenbosch's faculties,
 with a list of courses each faculty offers,
 as well a dictionary of  admission requirements
 """
-from varsity import University
-from schools import Faculty
+from SA_version.varsity import University
+from SA_version.schools import Faculty
 
 
 eng = Faculty("Engineering",
@@ -118,7 +118,7 @@ com = Faculty("Commerce",
         {"aps": 30, "english": 60, "maths": 60}
         )
 
-uct_schools = [eng, built_env, info_tech, human,
+us_schools = [eng, built_env, info_tech, human,
         science, health_care, law, com]
 
-uct_data = University("uct", uct_schools)
+us_data = University("us", us_schools)

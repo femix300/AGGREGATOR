@@ -5,8 +5,8 @@ a list of courses that are found from each faculty,
 as well a dictionary of  admission requirements
 """
 
-from varsity import University
-from schools import Faculty
+from SA_version.varsity import University
+from SA_version.schools import Faculty
 
 
 eng = Faculty("Engineering", ["BEng (Industrial Engineering)",

@@ -4,8 +4,8 @@ This module creates a database of University of Johannersburg's faculties,
 with a list of courses each faculty offers,
 as well a dictionary of  admission requirements
 """
-from varsity import University
-from schools import Faculty
+from SA_version.varsity import University
+from SA_version.schools import Faculty
 
 
 eng = Faculty("Engineering",
