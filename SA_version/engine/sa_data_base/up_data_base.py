@@ -5,8 +5,8 @@ a list of courses that are found from each faculty,
 as well a dictionary of  admission requirements
 """
 
-from SA_version.varsity import University
-from SA_version.schools import Faculty
+from engine.varsity import University
+from engine.schools import Faculty
 
 
 eng = Faculty("Engineering", ["BEng (Industrial Engineering)",
@@ -29,7 +29,6 @@ built_env = Faculty("Built Environment",
             "aps": 30,
             "maths": 60,
             "physics": 50,
-            "accounting": 50,
             "english":60
             }
         )
@@ -44,16 +43,16 @@ info_tech = Faculty("Information Technology",
 human = Faculty("Humanities",
         ["BSocSc (Industrial Sociology and Labour studies)",
             "B Soc Sc Geography & Environmental Management",
-            "BSocSc(Philosophy, Politics and Economics",
-            "BA(languages)",
-            "BA(Fine Arts)",
-            "BA(Audilogy)",
-            "BA(Information Design)",
-            "Bachelor of Drama(BDram)",
-            "BSocSc(Heritage and Cultural Tourism",
-            "BA(Law)",
-            "Bachelor of Social Work(BSW)",
-            "Bachelor of  Music(BMus)",
+            "BSocSc (Philosophy, Politics and Economics",
+            "BA (Languages)",
+            "BA (Fine Arts)",
+            "BA (Audilogy)",
+            "BA (Information Design)",
+            "Bachelor of Drama (BDram)",
+            "BSocSc (Heritage and Cultural Tourism",
+            "BA (Law)",
+            "Bachelor of Social Work (BSW)",
+            "Bachelor of Music (BMus)",
             "BEd (Bachelor of Education)"
             ],
         {"aps": 30, "english": 60}
@@ -95,9 +94,9 @@ agric_sc = Faculty(
 
 health_care = Faculty("Healthcare Sciences",
         ["Bachelor of Occupational Therapy (BOT)",
-            "B Physiotherapy(BPhysio)",
+            "B Physiotherapy (BPhysio)",
             "B Radiography (Diagnostics) (BRad Diagnostics)",
-            "Bachelor of Nursing(BNurs)"],
+            "Bachelor of Nursing (BNurs)"],
         {
             "aps": 30,
             "maths": 50,

@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-This module creates a database of University of Stellenbosch's faculties,
+This module creates a database of University of Cape Town's faculties,
 with a list of courses each faculty offers,
 as well a dictionary of  admission requirements
 """
-from SA_version.varsity import University
-from SA_version.schools import Faculty
+from engine.varsity import University
+from engine.schools import Faculty
 
 
 eng = Faculty("Engineering",
@@ -42,17 +42,17 @@ info_tech = Faculty("Information Technology",
 
 human = Faculty("Humanities",
         ["BSocSc (Industrial Sociology and Labour studies)",
-            "BSocSc Geography & Environmental Management",
-            "BSocSc(Philosophy, Politics and Economics",
-            "BA(languages)",
-            "BA(Fine Arts)",
-            "BA(Audilogy)",
-            "BA(Information Design)",
-            "Bachelor of Drama(BDram)",
-            "BSocSc(Heritage and Cultural Tourism",
-            "BA(Law)",
-            "Bachelor of Social Work(BSW)",
-            "Bachelor of  Music(BMus)",
+            "BSocSc (Geography & Environmental Management)",
+            "BSocSc (Philosophy, Politics and Economics)",
+            "BA (languages)",
+            "BA (Fine Arts)",
+            "BA (Audilogy)",
+            "BA (Information Design)",
+            "Bachelor of Drama (BDram)",
+            "BSocSc (Heritage and Cultural Tourism",
+            "BA (Law)",
+            "Bachelor of Social Work (BSW)",
+            "Bachelor of Music (BMus)",
             "BEd (Bachelor of Education)"
             ],
         {"aps": 30, "english": 60}
@@ -118,7 +118,7 @@ com = Faculty("Commerce",
         {"aps": 30, "english": 60, "maths": 60}
         )
 
-us_schools = [eng, built_env, info_tech, human,
+uct_schools = [eng, built_env, info_tech, human,
         science, health_care, law, com]
 
-us_data = University("us", us_schools)
+uct_data = University("uct", uct_schools)

@@ -4,8 +4,8 @@ This module creates a database of ukzn faculties,
 a list of courses that are found from each faculty
 as well a dictionary of  admission requirements
 """
-from SA_version.varsity import University
-from SA_version.schools import Faculty
+from engine.varsity import University
+from engine.schools import Faculty
 
 
 eng = Faculty("Engineering", ["B Sc Eng: Computer",
@@ -24,10 +24,10 @@ eng = Faculty("Engineering", ["B Sc Eng: Computer",
     )
 
 human = Faculty("Humanities",
-        ["B Soc Sc (General Studies)",
+        ["B Soc Sc General Studies",
             "B Soc Sc Geography & Environmental Management",
             "B A Philosophy, Politics and Law",
-            "B A (General Studies)",
+            "B A General Studies",
             "B A Music",
             "B A Music & Drama Performance",
             "B A Cultural & Heritage Tourism",

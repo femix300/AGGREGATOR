@@ -2,7 +2,7 @@
 """
 This a module that defines class called universities
 """
-from SA_version.schools import Faculty
+from engine.schools import Faculty
 
 
 class University:
@@ -64,7 +64,7 @@ class University:
         loop = 1
         while (loop):
             names = ["ukzn", "up", "uct", "uj", "us", "wits"]
-            print("You can choose from the following list of universities")
+            print("Choose from the following list of universities")
             for choice in names:
                 print("{}".format(choice), end=" ")
             print()
@@ -75,21 +75,68 @@ class University:
             
         for univ in data_base:
             if univ_name == univ.name:
-                engl_score = int(input("Enter your english score: "))
-                aps_score = int(input("Enter your aps score: "))
+                while True:
+                    engl_score = input("Enter your English score (0-100): ")
+                    aps_score = input("Enter your APS score (0-42): ")
+
+                    if engl_score.isdigit() and aps_score.isdigit():
+                        engl_score = int(engl_score)
+                        aps_score = int(aps_score)
+
+                        if 0 <= engl_score <= 100 and 0 <= aps_score <= 42:
+                            break
+                        else:
+                            print("Re-enter the values.")
+                            print("Make sure they're within the specified ranges.")
+                    else:
+                        print("Re-enter the values.")
+                        print("Make sure you enter valid digits.")
+
                 if aps_score < 29 or engl_score < 50:
                     univ.display(univ_name, st_courses)
                     return
 
                 s = ["Technical", "Science", "other"]
-                print("Matric streams 1", end=" ")
-                print("({}), 2 ({}) and 3 ({})".format(s[0], s[1], s[2]))
-                stream = int(input("Enter your matric stream: "))
+                while True:
+                    print("Matric streams 1", end=" ")
+                    print("({}), 2 ({}) and 3 ({})".format(s[0], s[1], s[2]))
+                    stream = input("Enter your matric stream: ")
+                    if stream.isdigit():
+                        stream = int(stream)
+                        if stream > 0 and stream < 4:
+                            break
+                
                 if stream == 1 or stream == 2:
-                    maths_sc = int(input("Enter your mathematics score: "))
-                    physics_sc = int(input("Enter your physics score: "))
+                    while True:
+                        maths_sc = input("Enter your maths score(0-100): ")
+                        physics_sc = input("Enter your physics score(0-100): ")
+                        if maths_sc.isdigit() and physics_sc.isdigit():
+                            maths_sc = int(maths_sc)
+                            physics_sc = int(physics_sc)
+                            if ((maths_sc >= 0 and maths_sc < 101)
+                                    and physics_sc >= 0 and physics_sc < 101):
+                                break
+                            else:
+                                print("Re-enter the values")
+                                print("Make sure they're within 0-100 range")
+                        else:
+                            print("Re-enter the values.")
+                            print("Make sure you enter valid digits.")
+
                 if stream == 2:
-                    bio_sc = int(input("Enter your life sciences score: "))
+                    while True:
+                        bio_sc = input("Enter your life sciences score(0-100): ")
+                        if bio_sc.isdigit():
+                            bio_sc = int(bio_sc)
+
+                            if bio_sc >= 0 and bio_sc < 101:
+                                break
+                            else:
+                                print("Re-enter the value")
+                                print("Make sure it's within the specified range")
+                        else:
+                            print("Re-enter the value.")
+                            print("Make sure you enter valid digits.")
                 for school in univ.schools:
                     engl_req = school.requirements["english"]
                     aps_req = school.requirements["aps"]
@@ -102,6 +149,8 @@ class University:
                             if len(school.requirements) > 3:
                                 phys_req = school.requirements["physics"]
                             if stream == 1 or stream == 2:
+                                if stream == 1:
+                                    bio_sc = 0
                                 if len(school.requirements) == 3:
                                     if maths_sc >= maths_req:
                                         for course in school.courses:
@@ -111,13 +160,12 @@ class University:
                                             physics_sc >= phys_req):
                                         for course in school.courses:
                                             st_courses.append(course)
-                                else:
+                                elif len(school.requirements) == 5:
                                     bio_req = school.\
                                             requirements["life sciences"]
-                                    if stream == 2:
-                                        if (maths_sc >= maths_req):
-                                            if (physics_sc >= phys_req 
-                                                    or bio_sc >= bio_req):
-                                                for course in school.courses:
-                                                    st_courses.append(course)
+                                    if (maths_sc >= maths_req):
+                                        if (physics_sc >= phys_req
+                                                or bio_sc >= bio_req):
+                                            for course in school.courses:
+                                                st_courses.append(course)
         univ.display(univ_name, st_courses)
