@@ -39,6 +39,10 @@ class University:
             raise ValueError("Courses must be a list")
 
     def display(self, u_name, data=None):
+        """
+        Displays the list of courses that the student qualifies for,
+        from the university of his or her choice
+        """
         if data:
             count = 0
             var = "course" if len(data) == 1 else "courses"
@@ -56,6 +60,11 @@ class University:
     
     @classmethod
     def admission(cls, data_base=[]):
+        """
+        Finds the list of courses that the student qualifies for
+        from a university of his or her choice
+        """
+
         st_courses = []
         """
         The following loop prompts the user to enter
@@ -69,9 +78,13 @@ class University:
                 print("{}".format(choice), end=" ")
             print()
 
+            # Prompts the user to enter the university of his or her choice
             univ_name = str(input("Enter your university name: "))
+
+            # check if the user input is among the supported list of varsities
             if univ_name in names:
-                loop = 0 #sets loop to zero to terminate the while loop
+                # Exit the loop if the student's choice is in 'names' list
+                loop = 0
             
         for univ in data_base:
             if univ_name == univ.name:
@@ -84,6 +97,7 @@ class University:
                         aps_score = int(aps_score)
 
                         if 0 <= engl_score <= 100 and 0 <= aps_score <= 42:
+                            # Exit the loop if 'engl_score'
                             break
                         else:
                             print("Re-enter the values.")
@@ -97,6 +111,7 @@ class University:
                     return
 
                 s = ["Technical", "Science", "other"]
+                
                 while True:
                     print("Matric streams 1", end=" ")
                     print("({}), 2 ({}) and 3 ({})".format(s[0], s[1], s[2]))
@@ -104,37 +119,69 @@ class University:
                     if stream.isdigit():
                         stream = int(stream)
                         if stream > 0 and stream < 4:
+                            # If the stream is within [1, 3], exit the loop
                             break
-                
+                #Checks if the student is Technical or Science
                 if stream == 1 or stream == 2:
                     while True:
                         maths_sc = input("Enter your maths score(0-100): ")
                         physics_sc = input("Enter your physics score(0-100): ")
+                        # Check if both maths_sc and physics_sc are digits
                         if maths_sc.isdigit() and physics_sc.isdigit():
+                            # Convert maths_sc and physics_sc to integers
                             maths_sc = int(maths_sc)
                             physics_sc = int(physics_sc)
                             if ((maths_sc >= 0 and maths_sc < 101)
                                     and physics_sc >= 0 and physics_sc < 101):
+                                # If both scores are valid, exit the loop
                                 break
                             else:
+                                """
+                                If scores are not within the valid range,
+                                prompt the user to re-enter values
+                                """
                                 print("Re-enter the values")
                                 print("Make sure they're within 0-100 range")
                         else:
+                            """
+                            If input values are not composed of digits,
+                            prompt the user to re-enter valid digits
+                            """
                             print("Re-enter the values.")
                             print("Make sure you enter valid digits.")
-
+                # Checks if the student is from Science stream
                 if stream == 2:
                     while True:
+                        """
+                        Prompt the user to enter their life sciences score
+                        and store it in the variable 'bio_sc'
+                        """
                         bio_sc = input("Enter your life sciences score(0-100): ")
-                        if bio_sc.isdigit():
-                            bio_sc = int(bio_sc)
 
+                        # Check if the input consists only of digits
+                        if bio_sc.isdigit():
+                            """
+                            Convert the input to an integer,
+                            if it contains only digits
+                            """
+                            bio_sc = int(bio_sc)
+                            
+                            # Check if the entered score is within [0, 100]
                             if bio_sc >= 0 and bio_sc < 101:
+                                # Exit the loop if the score is valid
                                 break
                             else:
+                                """
+                                Print an error message
+                                if the score out of range
+                                """
                                 print("Re-enter the value")
                                 print("Make sure it's within the specified range")
                         else:
+                            """
+                            Print an error message
+                            if the input does not consist of valid digits
+                            """
                             print("Re-enter the value.")
                             print("Make sure you enter valid digits.")
                 for school in univ.schools:

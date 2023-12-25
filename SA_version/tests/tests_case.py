@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+"""These are the unittest for University class"""
 import unittest
+
 
 class TestUniversity(unittest.TestCase):
     def test_constructor(self):
@@ -42,8 +45,6 @@ class TestUniversity(unittest.TestCase):
             mock_print.assert_any_call("2. CourseB")
 
     def test_admission_method(self):
-        # Note: For testing methods like admission, it's usually better to refactor
-        # the code to make it more testable and modular. Here, we just test if the method runs without errors.
         University.admission()
 
 if __name__ == '__main__':

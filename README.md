@@ -2,7 +2,7 @@
 
 ## A program that helps check if students are qualified to study their dream course in their dream University by using their credentials.
 
-This project was built to aid Nigerian students in their admission process into tetiary Institutions. It helps students to make the right choices when it comes to matters pertaining to course and Institution. Not only does it do this in a very short time, but it also makes the whole process far more easier and less stressful. Here are some very important features of Merit.
+This project was built to aid Nigerian and South African students in their admission process into tetiary Institutions. It helps students to make the right choices when it comes to matters pertaining to course and Institution. Not only does it do this in a very short time, but it also makes the whole process far more easier and less stressful. Here are some very important features of Merit.
 
 * Calculating a student's aggregate score by using their credentials e.g olevel, UTME, and POST UTME results.
 * Predicting the POST UTME score a student needs to achieve in order to be considered for admission.
@@ -12,6 +12,12 @@ This project was built to aid Nigerian students in their admission process into 
 * Basic info about a selected University.
 * Listing out all courses (undergraduate) offered in a selected University.
 * Listing out all the faculties and courses (undergraduate) under them.
+* Displaying the list of universities currently supported by Merit.
+
+South Africa
+
+* Students are required to input their APS scores, English scores, and scores for additional subjects based on their matric streams. For example, students in science and technical streams should input their Mathematics and Physical Science marks or scores.
+* Displays a list of courses for which the student qualifies at the university of his or her choice.
 * Displaying the list of universities currently supported by Merit.
 
 ## Here's a Screenshot!

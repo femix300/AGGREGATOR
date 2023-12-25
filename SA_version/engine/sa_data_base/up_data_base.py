@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-This module creates a database of University of Pretorea's faculties,
+""" This module creates a database of University of Pretorea's faculties,
 a list of courses that are found from each faculty,
 as well a dictionary of  admission requirements
 """
